@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { useWishlistContext } from "./WishlistContext";
 
 
@@ -6,15 +6,18 @@ export function WishlistButton({product}){
     const{wishlist,setWishlist} = useWishlistContext();
     const [addToWishlist,setAddToWishlist] = useState(false);
 
+    
+    
     const handleWishlist=()=>{
     setAddToWishlist(!addToWishlist)
-    
-    if(addToWishlist){
+    console.log(wishlist)
+    if(addToWishlist===true){
         setWishlist([...wishlist,product])
     }
-    else if(addToWishlist===false){
-        const filteredArr = [...wishlist].filter((item)=>item.key !== product.key)
-    setAddToWishlist(filteredArr)
+    
+     if(addToWishlist===false){
+        
+    setWishlist( wishlist.filter((item)=>item.key !== product.key))
     
     }}
     

@@ -20,7 +20,7 @@ export function HomePage (){
                 ) }
                 
           </div>
-          <span style={{color:"#D9534F"}}>wego! wego! wego! wego! wego! ego! wego! wego! wego! wego! wego! wego! wego! wego! wego! wego! wego! wego!</span>
+          
           </div>
   
   

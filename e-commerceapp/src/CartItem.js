@@ -15,7 +15,7 @@ const [quantity,setQuantity] = useState(1)
  Quantity 
  <button onClick={()=>setQuantity(quantity+1)}>+</button> 
  {quantity} 
- <button onClick={()=>setQuantity(quantity-1)}>-</button>  
+ <button onClick={()=>setQuantity(quantity-1 && quantity>1)}>-</button>  
 </div>
 <div><button>Remove From cart</button></div>
 <button>Add To Wishlist</button>

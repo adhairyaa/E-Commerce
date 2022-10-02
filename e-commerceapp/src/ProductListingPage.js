@@ -1,6 +1,7 @@
 
-import { useState,useEffect } from "react";
-import { Wishlist } from "./Wishlist";
+import { useState,useEffect, useReducer } from "react";
+import { useCartContext } from "./CartProvider";
+
 import { WishlistButton } from "./WishlistButton";
 
 export  function ProductListingPage() {
@@ -13,64 +14,106 @@ export  function ProductListingPage() {
     // })()
     const Products =  [{"name":"Men's Shirt","category":"women","Price":2000,"Rating":4},
     {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
-    {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
-    {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
-    {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
-    {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4}
+    {"name":"Men's Shirt","category":"men","Price":1700,"Rating":4},
+    {"name":"Men's Shirt","category":"men","Price":1400,"Rating":4},
+    {"name":"Men's Shirt","category":"men","Price":1200,"Rating":4},
+    {"name":"Men's Shirt","category":"men","Price":1110,"Rating":4}
    ,{"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
    {"name":"Men's Shirt","category":"men","Price":2000,"Rating":4},
    {"name":"Men's Shirt","category":"women","Price":2000,"Rating":4} ]
-    const [liveProducts,SetLiveProducts] = useState(Products)
-    
-    const[categoryFilter,setCategoryFilter] = useState(false)
-    const[ratingFilter,setRatingFilter] = useState(false)
+   const {cart,setCart} = useCartContext
 
-    const handleCategoryFilter = (category)=>{
-          let categoryFilteredArr = [...liveProducts].filter((product)=>product.category===category)
-          console.log(categoryFilteredArr)
-          setCategoryFilter(!categoryFilter)
-          categoryFilter===true?SetLiveProducts(categoryFilteredArr):SetLiveProducts(Products)
-    }
-    const handleRatingFilter = (rating)=>{ 
-        setRatingFilter(!ratingFilter)
-        let ratingFilteredArr = [...liveProducts].filter((product)=>product.Rating >= rating)
-        ratingFilter?SetLiveProducts(ratingFilteredArr):SetLiveProducts(Products)
-
-    }
+   const handleDispatch = (state,action) => {
+    switch (action.type) {
+      case "Low to High":
+        return ( state={...state,sortBy:"Low to High"}
+        )
+      case "High to Low":
+        return ( state={...state,sortBy:"High to Low"}
+        )
+        case "Men":
+          return(state={...state,category:{...state.category,men:!state.category.men}})
     
+        case "Women":
+          return(state={...state,category:{...state.category,women:!state.category.women}})
+          case"clear":
+          return state={...state,sortBy:null,category:{...state.category,men:false,women:false}}
+          default: return state;
+    }
+   }
+
+   const [state,dispatch] = useReducer(handleDispatch,{
+    sortBy:null,
+    category:{men:false,women:false},
+    stars:null
+
+   })
+   const {sortBy,category} = state
+
+        const handleSortedProducts = (Products,sortByInfo)=>{
+          if(sortByInfo==="Low to High"){
+            return Products.sort((a,b)=>a.Price-b.Price)
+          }
+          if(sortByInfo==="High to Low"){
+            return Products.sort((a,b)=>b.Price-a.Price)
+          }
+          return Products
+        }
+
+        const handleFilteredProducts = (sortedProducts,filtersInfo)=>{
+          if(filtersInfo.category.men===true){
+            return sortedProducts.filter(product=>product.category==="men")
+          }
+          //  filtersInfo.category.men? 
+          //  return sortedProducts.filter(product=>product.category==="men")
+          //  :return true
+          
+          // return filtersInfo.category.men?sortedProducts.filter(product=>product.category==="men"):true
+
+          if(filtersInfo.category.women===true){
+            return sortedProducts.filter(product=>product.category==="women")
+          }
+          
+          
+          return sortedProducts
+
+        }
+    const sortedProducts = handleSortedProducts(Products,sortBy)
+    const filteredProducts = handleFilteredProducts(sortedProducts,{category})
   return (
     
     <div>
       <div className="FilterBar">
         <div className="FilterBarTitle">
             Filters
-            <button>Clear</button>
+            <button onClick={()=>dispatch({type:"clear"})}>Clear</button>
             </div>
-            <div className="PriceFilter">
+            <div className="Sort-By">
+              Sort-By
+              <input type="radio" name="sort" onClick={()=>dispatch({type:"Low to High"})}></input>Low to High
+              <input type="radio" name="sort"  onClick={()=>dispatch({type:"High to Low"})}></input>High to Low
 
             </div>
             
                 <div className="CategoryFilter">
                 Category 
-                <input type="checkbox"  onClick={()=>handleCategoryFilter("men")}></input>Men
-                <input type="checkbox" onClick={()=>handleCategoryFilter("women")} ></input>Women
+                <input type="checkbox" checked={category.men} onClick={()=>dispatch({type:"Men"})}></input>Men
+                <input type="checkbox" checked={category.women} onClick={()=>dispatch({type:"Women"})} ></input>Women
                 </div>
 
-                <div className="Rating">
-                <input type="checkbox" onClick={()=>handleRatingFilter(4)}></input><p>4 stars and above</p>
-                <input type="checkbox" onClick={()=>handleRatingFilter(3)}></input><p>3 stars and above</p>
-                <input type="checkbox" onClick={()=>handleRatingFilter(2)}></input><p>2 stars and above</p>
+                {/* <div className="Rating">
+                <input type="checkbox" onClick={()=>}></input><p>4 stars and above</p>
+                <input type="checkbox" onClick={()=>}></input><p>3 stars and above</p>
+                <input type="checkbox" onClick={()=>}></input><p>2 stars and above</p>
                 
-                </div>
-            <div className="SortByFilter">
-
-            </div>
+                </div> */}
+            
             
             </div>
           <div className="ProductListings">
-             <p style={{textAlign:"left",marginLeft:"2em"}}>showing all products({liveProducts.length})</p>
+             <p style={{textAlign:"left",marginLeft:"2em"}}>showing all products({filteredProducts.length})</p>
                 <div className="ListOfProducts">
-                 {liveProducts.map((item)=>
+                 {filteredProducts.map((item)=>
                     <div className="ProductItem">
                     <img src='Section.jpg' alt="productImage"></img>
                     <div style={{fontSize:"smaller"}}>{item.name}</div>
@@ -78,7 +121,7 @@ export  function ProductListingPage() {
                     <div className="ProductWishlist">
                     <WishlistButton product={item}/>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onClick={()=>setCart([...cart,item])}>Add To Cart</button>
 
                 </div>)}
             </div>

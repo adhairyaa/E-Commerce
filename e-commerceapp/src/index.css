@@ -105,8 +105,11 @@ color: #D9534F;
   height: 100%;
   position: fixed;
   margin-left: 0;
-  
+  padding-left: 1em;
   align-items: flex-start;
+}
+.searchBar{
+  width: 35%;
 }
 .ProductListings{
   width:75%;
@@ -123,6 +126,8 @@ color: #D9534F;
 margin:1em;
 background-color:white;
 position: relative;
+
+box-shadow: 5px 3px 3px  #e4c3c2;
 
 }
 .ProductItem button{
@@ -156,6 +161,7 @@ background-color: white;
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+  width: 80%;
  
 }
 .FilterBar button{

@@ -4,12 +4,13 @@ import { useCartContext } from "./CartProvider"
 
 
 export function CartPage(){
-const [orderamount,setOrderAmount] = useState(0)
+const [orderAmount,setOrderAmount] = useState(0)
 const {cart} = useCartContext()
-(function handleOrderAmount(){
+
+const handleOrderAmount=()=> {
 const OrderAmount = cart.reduce((sum,product)=>product.Price+sum,0)
-setOrderAmount(OrderAmount)
-})()
+ setOrderAmount(OrderAmount)
+ }
 
 return(
     <div className="CartPage">
@@ -26,7 +27,7 @@ return(
 <h3>Price Details</h3>
 <div>
 Price({cart.length})
-{orderamount}
+{orderAmount}
 
 </div>
 <div>
@@ -35,6 +36,7 @@ Price({cart.length})
     </div>
     <div>
         Total Amount
+        handleOrderAmount()
 
     </div>
 </div>

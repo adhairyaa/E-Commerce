@@ -7,7 +7,7 @@ export function NavBar  (){
     return(
     <div className="navBar">
             <h2 onClick={()=>setLivePage(<HomePage />)}> <span style={{color:'#D9534F'}}>buye</span></h2>
-            <input placeholder="search"></input>
+            <input placeholder="search" className="searchBar"></input>
             <div className="navBarItems">
             <button>Login</button>
             <div onClick={()=>setLivePage(<Wishlist />)}><i style={{color:"red"}} class="fa-solid fa-heart"></i></div>

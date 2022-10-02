@@ -2,6 +2,7 @@ import { useWishlistContext } from "./WishlistContext";
 import { WishlistButton } from "./WishlistButton";
 export function Wishlist() {
     const {wishlist} = useWishlistContext();
+    console.log(wishlist)
   return (
     <div className="WishListPage">
         <h2>Your Wishlist</h2>
@@ -12,9 +13,11 @@ export function Wishlist() {
                     <img src='Section.jpg' alt="productImage"></img>
                     <div style={{fontSize:"smaller"}}>{item.name}</div>
                     <div style={{fontWeight:"bolder"}}>{item.Price}</div>
-                    <div className="ProductWishlist"></div>
+                    <div className="ProductWishlist">
+                    <WishlistButton product={item}/>
+                    </div>
                     <button>Add To Cart</button>
-                    
+
                     </div>)}
                     </div>
                     </div>
