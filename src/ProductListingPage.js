@@ -1,5 +1,5 @@
 
-import { useState,useEffect, useReducer } from "react";
+import {  useReducer } from "react";
 import { useCartContext } from "./CartProvider";
 
 import { WishlistButton } from "./WishlistButton";
