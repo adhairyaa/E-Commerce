@@ -1,23 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { LivePageContext } from './LivePageContext';
-import { WishlistProvider } from './WishlistContext';
-import { CartProvider } from './CartProvider';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+import { WishlistProvider } from "./context/WishlistContext";
+import { CartProvider } from "./context/CartProvider";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Router>
     <CartProvider>
-   <WishlistProvider>
-    <LivePageContext>
-    <App />
-    </LivePageContext>
-    </WishlistProvider>
+      <WishlistProvider>
+        <App />
+      </WishlistProvider>
     </CartProvider>
+    </Router>
   </React.StrictMode>
 );
 

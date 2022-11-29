@@ -1,18 +1,18 @@
 
 import './App.css';
-import {NavBar} from './NavBar';
+import {NavBar} from './components/NavBar';
+import Router from './routes/Router'
 
 
-import {useLivePageContext} from './LivePageContext';
 
 function App() {
-  const {livePage} = useLivePageContext();
+  
   return (
     <div className="App">
       <NavBar />
       <div className="Wrapper">
          <div className='MainContent'>
-         {livePage}
+         <Router />
          </div>
       </div>
       
