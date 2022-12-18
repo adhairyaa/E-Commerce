@@ -1,16 +1,8 @@
 import { useWishlistContext } from "../context/WishlistContext";
 import { WishlistButton } from "../components/WishlistButton";
-<<<<<<< Updated upstream
 export function Wishlist() {
   const { wishlist } = useWishlistContext();
   console.log({ wishlist });
-=======
-
-
-export default function Wishlist() {
-  const { wishlist } = useWishlistContext();
-  console.log("a");
->>>>>>> Stashed changes
   return (
     <div className="WishListPage">
       <h2>Your Wishlist</h2>
@@ -24,10 +16,6 @@ export default function Wishlist() {
               <WishlistButton product={item} />
             </div>
             <button>Add To Cart</button>
-<<<<<<< Updated upstream
-=======
-            <div style={{ width: "30%" }}>a</div>
->>>>>>> Stashed changes
           </div>
         ))}
       </div>

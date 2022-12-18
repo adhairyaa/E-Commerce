@@ -8,15 +8,14 @@ import { WishlistProvider } from "./context/WishlistContext";
 import { CartProvider } from "./context/CartProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(
   <React.StrictMode>
     <Router>
-      <CartProvider>
-        <WishlistProvider>
-          <App />
-        </WishlistProvider>
-      </CartProvider>
+    <CartProvider>
+      <WishlistProvider>
+        <App />
+      </WishlistProvider>
+    </CartProvider>
     </Router>
   </React.StrictMode>
 );
