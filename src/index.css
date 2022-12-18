@@ -1,31 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&family=Poppins:wght@300&display=swap');
-*{
-  font-family: 'Expletus Sans', cursive;
-  font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans&family=Poppins:wght@300&display=swap");
+* {
+  font-family: "Expletus Sans", cursive;
+  font-family: "Poppins", sans-serif;
 }
-button{
+button {
   cursor: pointer;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+a {
+  text-decoration: none;
 }
 
 /* var --primary-color: #D9534F; */
 
-
-.navBar{
-  width:92%;
+.navBar {
+  width: 92%;
   background-color: #fff;
   border-bottom: 1px solid #e7e7e7;
   display: flex;
@@ -34,61 +36,59 @@ code {
   position: fixed;
   z-index: 3;
   margin-left: 50px;
-  top:0
-
+  top: 0;
 }
 
-.navBarItems{
+.navBarItems {
   display: flex;
   align-items: center;
-  justify-content:space-between;
-
-
+  justify-content: space-between;
 }
-.navBarItems button{
-  background-color: #D9534F;
-  color:white;
-  border:none;
+.navBarItems button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin: 1em;
 }
-.heroSection{
+.heroSection {
   position: relative;
 }
-.heroSection img{
-width: 90%;
-height: 600px;
+.heroSection img {
+  width: 90%;
+  height: 600px;
 }
 
-.heroSectionText{
+.heroSectionText {
   position: absolute;
-  bottom:5%;
+  bottom: 5%;
   right: 8%;
   font-size: 8em;
   font-weight: 10em;
-  color:#D9534F
+  color: #d9534f;
 }
-.HomeSectionTiles{
+.HomeSectionTiles {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   margin-top: 2rem;
 }
-.HomeSectionTiles img{
+.HomeSectionTiles img {
   width: 40%;
   height: 40%;
 }
-.tileBar{
+.tileBar {
   position: relative;
 }
-.tileText{
+
+.tileText {
   width: 100%;
   position: absolute;
   background-color: #fff;
-color: #D9534F;
+  color: #d9534f;
   font-size: 1rem;
   font-weight: bold;
   top: 50%;
@@ -97,111 +97,106 @@ color: #D9534F;
 }
 /* PRODUCT--LISTING--PAGE------------------------------------ */
 
-.FilterBar{
+.FilterBar {
   display: flex;
   flex-flow: row wrap;
-  background-color:#ffe9e9;
-  width:25%;
+  background-color: #ffe9e9;
+  width: 25%;
   height: 100%;
   position: fixed;
   margin-left: 0;
   padding-left: 1em;
   align-items: flex-start;
 }
-.searchBar{
+.searchBar {
   width: 35%;
 }
-.ProductListings{
-  width:75%;
+.ProductListings {
+  width: 75%;
   margin-left: 25%;
   margin-top: 80px;
 }
-.ListOfProducts{
+.ListOfProducts {
   display: flex;
   flex-flow: wrap;
   margin-left: 4rem;
-  
 }
-.ProductItem{
-margin:1em;
-background-color:white;
-position: relative;
+.ProductItem {
+  margin: 1em;
+  background-color: white;
+  position: relative;
 
-box-shadow: 5px 3px 3px  #e4c3c2;
-
+  box-shadow: 5px 3px 3px #e4c3c2;
 }
-.ProductItem button{
+.ProductItem button {
   width: 100%;
   border: none;
-  background-color: #D9534F;
+  background-color: #d9534f;
   color: white;
 }
-.ProductItem img{
+.ProductItem img {
   width: 150px;
   height: 180px;
 }
-.ProductWishlist{
-position: absolute;
-top: 4%;
-right: 5%;
-border-radius:50% ;
-width: 20px;
-height: 20px;
-background-color: white;
+.ProductWishlist {
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
 }
-.wishlistHeart{
+.wishlistHeart {
   color: grey;
-  font-size: .8em;
-  position:absolute;
+  font-size: 0.8em;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.FilterBarTitle{
+.FilterBarTitle {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
   width: 80%;
- 
 }
-.FilterBar button{
+.FilterBar button {
   border: none;
   background-color: white;
 }
-.WishListPage{
-  margin-top:5rem ;
-
+.WishListPage {
+  margin-top: 5rem;
 }
-.WishListProducts{
-  display:flex;
+.WishListProducts {
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-left: 8em;
 }
 /* CART PAGE________________________ */
 
-.CartPage{
+.CartPage {
   margin-top: 6em;
-  
 }
-.CartPageItems{
+.CartPageItems {
   display: flex;
   justify-content: space-evenly;
 }
-.InCartProducts{
-display: flex;
-flex-flow: wrap column;
+.InCartProducts {
+  display: flex;
+  flex-flow: wrap column;
 }
-.CartItem{
+.CartItem {
   display: flex;
   background-color: #d2b2b0;
   margin: 1em;
 }
-.CartItem img{
+.CartItem img {
   width: 150px;
   height: 170px;
 }
-.OrderBill{
+.OrderBill {
   display: flex;
   flex-flow: wrap column;
   background-color: #d2b2b0;

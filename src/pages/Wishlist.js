@@ -6,6 +6,9 @@ export function Wishlist() {
   return (
     <div className="WishListPage">
       <h2>Your Wishlist</h2>
+      {wishlist.length === 0 && (
+        <div>Nothing to show here Start Shopping!!</div>
+      )}
       <div className="WishListProducts">
         {wishlist.map((item) => (
           <div className="ProductItem">
