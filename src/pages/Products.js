@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { useCartContext } from "../context/CartProvider";
-
+import styles from './Pages.css'
 import { WishlistButton } from "../components/WishlistButton";
 
 export function Products() {

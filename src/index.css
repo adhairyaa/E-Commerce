@@ -54,47 +54,7 @@ code {
   transition: all 0.3s ease-in-out;
   margin: 1em;
 }
-.heroSection{
-  position: relative;
-}
-.heroSection img{
-width: 90%;
-height: 600px;
-}
 
-.heroSectionText{
-  position: absolute;
-  bottom:5%;
-  right: 8%;
-  font-size: 8em;
-  font-weight: 10em;
-  color:#D9534F
-}
-.HomeSectionTiles{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  margin-top: 2rem;
-}
-.HomeSectionTiles img{
-  width: 40%;
-  height: 40%;
-}
-.tileBar{
-  position: relative;
-}
-.tileText{
-  width: 100%;
-  position: absolute;
-  background-color: #fff;
-color: #D9534F;
-  font-size: 1rem;
-  font-weight: bold;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 /* PRODUCT--LISTING--PAGE------------------------------------ */
 
 .FilterBar{
