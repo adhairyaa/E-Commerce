@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { CartItem } from "../components/CartItem";
 import { useCartContext } from "../context/CartProvider";
 
