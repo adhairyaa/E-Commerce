@@ -1,14 +1,16 @@
-import { createContext, useContext,useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const WishlistContext = createContext()
+const WishlistContext = createContext();
 
-const WishlistProvider = ({children})=>{
-const [wishlist,setWishlist] = useState([{name:"Men's Shirt",category:"women",Price:2000,Rating:4}])
-    return(
-        <WishlistContext.Provider value={{wishlist,setWishlist}}>{children}</WishlistContext.Provider>
-    )
-}
+const WishlistProvider = ({ children }) => {
+  const [wishlist, setWishlist] = useState([]);
+  return (
+    <WishlistContext.Provider value={{ wishlist, setWishlist }}>
+      {children}
+    </WishlistContext.Provider>
+  );
+};
 
-const useWishlistContext = ()=>useContext(WishlistContext)
+const useWishlistContext = () => useContext(WishlistContext);
 
-export {WishlistProvider,useWishlistContext}
+export { WishlistProvider, useWishlistContext };
