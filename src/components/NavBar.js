@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export function NavBar() {
   return (
     <div className="navBar">
-      <Link to="/dhairya">
+      <Link to="/">
         <h2>
           {" "}
           <span style={{ color: "#D9534F" }}>buye</span>

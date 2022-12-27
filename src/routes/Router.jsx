@@ -10,7 +10,7 @@ function Router() {
         <Route path="/products" element={<Products />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/dhairya" exact element={<Home />} />
+        <Route path="/" exact element={<Home />} />
       </Routes>
     </div>
   );
