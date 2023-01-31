@@ -56,7 +56,7 @@ export function Products() {
               <div style={{ fontSize: "smaller" }}>{item.name}</div>
               <div style={{ fontWeight: "bolder" }}>{item.price}</div>
               <div className="ProductWishlist">
-                <WishlistButton product={item} />
+                <WishlistButton productId={item.id} />
               </div>
               <button onClick={() => setCart([...cart, item])}>
                 Add To Cart

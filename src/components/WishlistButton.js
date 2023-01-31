@@ -1,24 +1,20 @@
-import { useState } from "react";
 import { useWishlistContext } from "../context/WishlistContext";
 
-export function WishlistButton({ product }) {
+export function WishlistButton({ productId }) {
   const { wishlist, setWishlist } = useWishlistContext();
-  const [isInWishlist, setIsInWishlist] = useState(false);
-  console.log(wishlist);
-  const handleWishlist = () => {
-    if (isInWishlist === false) {
-      setWishlist([...wishlist, product]);
-    } else {
-      setWishlist(wishlist.filter((item) => item.key !== product.key));
-    }
-    setIsInWishlist(!isInWishlist);
+  const handleWishlistButton = () => {
+    wishlist.length === 0
+      ? setWishlist([productId])
+      : wishlist.includes(productId)
+      ? setWishlist(wishlist.filter((id) => id !== productId))
+      : setWishlist([...wishlist, productId]);
   };
 
   return (
-    <div className="wishlistHeart" onClick={() => handleWishlist()}>
+    <div className="wishlistHeart" onClick={() => handleWishlistButton()}>
       <i
         class="fa-solid fa-heart"
-        style={{ color: isInWishlist ? "#D9534F" : "grey" }}
+        style={{ color: wishlist.includes(productId) ? "red" : "grey" }}
       ></i>
     </div>
   );
