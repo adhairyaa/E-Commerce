@@ -5,7 +5,6 @@ import { useFilterProvider } from "../context/FilterProvider";
 import Filter from "../components/filter/Filter";
 export function Products() {
   const { dispatch } = useCartContext();
-
   const { state } = useFilterProvider();
   const { sortBy, gender, size } = state;
 

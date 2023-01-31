@@ -95,6 +95,16 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.itemQuantity {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 14px;
+  font-size: small;
+}
+.navbarItem {
+  position: relative;
+}
 /* PRODUCT--LISTING--PAGE------------------------------------ */
 
 .FilterBar {
@@ -186,15 +196,30 @@ a {
 .InCartProducts {
   display: flex;
   flex-flow: wrap column;
+  gap: 0.1rem;
 }
 .CartItem {
   display: flex;
   background-color: #d2b2b0;
   margin: 1em;
+  width: 310px;
+  height: 200px;
+  position: relative;
+}
+.CartItem button {
+  border: none;
+  margin-top: 6rem;
+  margin-left: 1px;
 }
 .CartItem img {
-  width: 150px;
-  height: 170px;
+  width: 160px;
+  height: 200px;
+  position: absolute;
+}
+.cart-product-details {
+  position: absolute;
+  right: 7px;
+  top: 15px;
 }
 .OrderBill {
   display: flex;
@@ -204,4 +229,5 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 2em;
+  height: 100vh;
 }

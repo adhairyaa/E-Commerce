@@ -6,9 +6,9 @@ export function CartItem({ product }) {
     <div className="CartPage">
       <div className="CartItem">
         <div>
-          <img src="Section.jpg" alt="img"></img>
+          <img src={product.productImage} alt="img"></img>
         </div>
-        <div>
+        <div className="cart-product-details">
           <div>{product.name}</div>
           <div>
             {product.price} <span style={{ color: "#D9534F" }}>40%OFF</span>
