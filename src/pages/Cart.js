@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import { CartItem } from "../components/CartItem";
 import { useCartContext } from "../context/CartProvider";
 import products from "../products/products.json";
 export function Cart() {
-  // const [orderAmount,setOrderAmount] = useState(0)
+  const [orderAmount, setOrderAmount] = useState(0);
 
   const { state } = useCartContext();
   const { productsInCart } = state;
@@ -10,15 +11,21 @@ export function Cart() {
   const cartProductsData = products.filter((item) =>
     productsInCart.includes(item.id)
   );
-
-  // const handleOrderAmount=()=> {
-  // const OrderAmount = cart.reduce((sum,product)=>product.Price+sum,0)
-  //  setOrderAmount(OrderAmount)
-  //  }
+  useEffect(() => {
+    cartProductsData.length > 0 &&
+      setOrderAmount(
+        cartProductsData
+          .map((item) => item.price)
+          .reduce((prev, next) => prev + next)
+      );
+  }, [cartProductsData]);
 
   return (
     <div className="CartPage">
       <h2>Your Cart</h2>
+      {state.productsInCart.length === 0 && (
+        <h3>Nothing to show here Start Shopping!</h3>
+      )}
       <div className="CartPageItems">
         <div className="InCartProducts">
           {cartProductsData.map((product) => (
@@ -28,12 +35,10 @@ export function Cart() {
           ))}
         </div>
         <div className="OrderBill">
-          <h3>Price Details</h3>
-          <div>
-            Price({cartProductsData.length}){/* {orderAmount} */}
-          </div>
+          <h3>Bill Details</h3>
+          <div>Items ({cartProductsData.length})</div>
           <div>Delivery Charges $499</div>
-          <div>Total Amount handleOrderAmount()</div>
+          <div>Total Amount {orderAmount}</div>
         </div>
       </div>
     </div>
