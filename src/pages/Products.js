@@ -5,8 +5,9 @@ import { useFilterProvider } from "../context/FilterProvider";
 import Filter from "../components/filter/Filter";
 export function Products() {
   const { cart, setCart } = useCartContext();
+
   const { state } = useFilterProvider();
-  const { sortBy, gender } = state;
+  const { sortBy, gender, size } = state;
 
   const getSortedProducts = (products, sortBy) => {
     return sortBy === "LOW_TO_HIGH"
@@ -20,16 +21,22 @@ export function Products() {
   let filteredData = sortedProducts;
 
   const handleGenderFilter = (data, gender) => {
-    const genderFilteredData = data.filter(
-      (item) => item.category === gender.includes(item.category)
+    const genderFilteredData = data.filter((item) =>
+      gender.includes(item.category)
     );
-
     filteredData = genderFilteredData;
+  };
+  const handleSizeFilter = (data, size) => {
+    const sizeFilteredData = data.filter((item) => size.includes(item.size));
+    filteredData = sizeFilteredData;
   };
 
   const handleFilterFunctions = () => {
     if (state.gender.length > 0) {
       handleGenderFilter(filteredData, gender);
+    }
+    if (state.size.length > 0) {
+      handleSizeFilter(filteredData, size);
     }
   };
 

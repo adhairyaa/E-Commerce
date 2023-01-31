@@ -1,7 +1,8 @@
 import { useFilterProvider } from "../../context/FilterProvider";
 import "./Filter.css";
 function Filter() {
-  const { dispatch } = useFilterProvider();
+  const { dispatch, state } = useFilterProvider();
+  const { gender, sortBy, size } = state;
 
   return (
     <div className="filterBar">
@@ -19,6 +20,7 @@ function Filter() {
               type="radio"
               name="sort-by"
               onClick={() => dispatch({ type: "LOW_TO_HIGH" })}
+              checked={sortBy === "LOW_TO_HIGH" ? true : false}
             ></input>{" "}
             low-to-high
           </div>
@@ -27,6 +29,7 @@ function Filter() {
               type="radio"
               name="sort-by"
               onClick={() => dispatch({ type: "HIGH_TO_LOW" })}
+              checked={sortBy === "HIGH_TO_LOW" ? true : false}
             ></input>{" "}
             high-to-low
           </div>
@@ -36,6 +39,7 @@ function Filter() {
           <input
             type="checkbox"
             onClick={() => dispatch({ type: "GENDER_FILTER", payload: "men" })}
+            checked={gender.includes("men") ? true : false}
           ></input>
           Men
           <input
@@ -43,6 +47,7 @@ function Filter() {
             onClick={() =>
               dispatch({ type: "GENDER_FILTER", payload: "women" })
             }
+            checked={gender.includes("women") ? true : false}
           ></input>
           Women
         </div>
@@ -51,21 +56,25 @@ function Filter() {
           <input
             type="checkbox"
             onClick={() => dispatch({ type: "SIZE_FILTER", payload: "L" })}
+            checked={size.includes("L") ? true : false}
           ></input>
           L
           <input
             type="checkbox"
             onClick={() => dispatch({ type: "SIZE_FILTER", payload: "XL" })}
+            checked={size.includes("XL") ? true : false}
           ></input>
           XL
           <input
             type="checkbox"
             onClick={() => dispatch({ type: "SIZE_FILTER", payload: "S" })}
+            checked={size.includes("S") ? true : false}
           ></input>
           S
           <input
             type="checkbox"
             onClick={() => dispatch({ type: "SIZE_FILTER", payload: "M" })}
+            checked={size.includes("M") ? true : false}
           ></input>
           M
         </div>

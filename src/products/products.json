@@ -11,7 +11,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1800,
-    "size": "L",
+    "size": "S",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
@@ -27,7 +27,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1100,
-    "size": "L",
+    "size": "XL",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
@@ -35,7 +35,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1900,
-    "size": "L",
+    "size": "XL",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
@@ -43,7 +43,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1299,
-    "size": "L",
+    "size": "M",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
@@ -51,7 +51,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1699,
-    "size": "L",
+    "size": "S",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
@@ -59,7 +59,7 @@
     "name": "Men's Shirt",
     "category": "men",
     "price": 1399,
-    "size": "L",
+    "size": "M",
     "brand": "roadster",
     "productImage": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
