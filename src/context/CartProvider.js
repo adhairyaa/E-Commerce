@@ -1,16 +1,34 @@
+import { createContext, useContext, useReducer } from "react";
 
-import { createContext, useContext, useState } from "react";
+const CartContext = createContext();
 
-const CartContext =  createContext()
+const handleAddToCart = (state, action) => {
+  switch (action.type) {
+    case "HANDLE_CART":
+      return (state = {
+        ...state,
+        productsInCart:
+          state.productsInCart.length === 0
+            ? [action.payload]
+            : state.productsInCart.includes(action.payload)
+            ? state.productsInCart.filter((item) => action.payload !== item)
+            : [...state.productsInCart, action.payload],
+      });
+    default:
+      return state;
+  }
+};
+const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(handleAddToCart, {
+    productsInCart: [],
+  });
+  return (
+    <CartContext.Provider value={{ state, dispatch }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
+const useCartContext = () => useContext(CartContext);
 
-const CartProvider =({children})=>{
-    const [cart,setCart]=useState([{"name":"Men's Shirt","category":"men","Price":2000,"Rating":4,"key":2},{"name":"Men's Shirt","category":"men","Price":2000,"Rating":4,"key":2}])
-    return(
-    <CartContext.Provider value={{cart,setCart}}>{children}</CartContext.Provider>)
-}
-
-
-const useCartContext = ()=>useContext(CartContext)
-
-export {CartProvider,useCartContext}
+export { CartProvider, useCartContext };

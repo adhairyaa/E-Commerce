@@ -4,7 +4,7 @@ import products from "../products/products.json";
 import { useFilterProvider } from "../context/FilterProvider";
 import Filter from "../components/filter/Filter";
 export function Products() {
-  const { cart, setCart } = useCartContext();
+  const { dispatch } = useCartContext();
 
   const { state } = useFilterProvider();
   const { sortBy, gender, size } = state;
@@ -58,7 +58,11 @@ export function Products() {
               <div className="ProductWishlist">
                 <WishlistButton productId={item.id} />
               </div>
-              <button onClick={() => setCart([...cart, item])}>
+              <button
+                onClick={() =>
+                  dispatch({ type: "HANDLE_CART", payload: item.id })
+                }
+              >
                 Add To Cart
               </button>
             </div>
