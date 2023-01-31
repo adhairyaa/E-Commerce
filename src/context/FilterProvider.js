@@ -51,6 +51,6 @@ export function FilterProvider({ children }) {
   );
 }
 
-const useStateProvider = () => useContext(FilterContext);
+const useFilterProvider = () => useContext(FilterContext);
 
-export { useStateProvider };
+export { useFilterProvider };

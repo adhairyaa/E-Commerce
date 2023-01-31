@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Men's Shirt",
+    "category": "women",
+    "price": 2000,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1800,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1600,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1100,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1900,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1299,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1699,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "men",
+    "price": 1399,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "name": "Men's Shirt",
+    "category": "women",
+    "price": 1199,
+    "size": "L",
+    "brand": "roadster",
+    "product-image": "https://images.pexels.com/photos/1661471/pexels-photo-1661471.jpeg?auto=compress&cs=tinysrgb&w=600"
+  }
+]
