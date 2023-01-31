@@ -1,8 +1,14 @@
 import { useWishlistContext } from "../context/WishlistContext";
 import { WishlistButton } from "../components/WishlistButton";
+import products from "../products/products.json";
+
 export function Wishlist() {
   const { wishlist } = useWishlistContext();
-  console.log({ wishlist });
+
+  const wishlistedProducts = products.filter((product) =>
+    wishlist.includes(product.id)
+  );
+
   return (
     <div className="WishListPage">
       <h2>Your Wishlist</h2>
@@ -10,13 +16,13 @@ export function Wishlist() {
         <div>Nothing to show here Start Shopping!!</div>
       )}
       <div className="WishListProducts">
-        {wishlist.map((item) => (
+        {wishlistedProducts.map((item) => (
           <div className="ProductItem">
-            <img src="Section.jpg" alt="productImage"></img>
+            <img src={item.productImage} alt="productImage"></img>
             <div style={{ fontSize: "smaller" }}>{item.name}</div>
-            <div style={{ fontWeight: "bolder" }}>{item.Price}</div>
+            <div style={{ fontWeight: "bolder" }}>{item.price}</div>
             <div className="ProductWishlist">
-              <WishlistButton product={item} />
+              <WishlistButton productId={item.id} />
             </div>
             <button>Add To Cart</button>
           </div>
