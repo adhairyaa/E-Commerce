@@ -13,6 +13,7 @@ function Filter() {
             Clear
           </button>
         </div>
+        <div className="filter-options"></div>
         <div className="sort-by-filter">
           <p>Sort-by</p>
           <div>
@@ -78,8 +79,8 @@ function Filter() {
           ></input>
           M
         </div>
-        <div className="brand-filter"></div>
       </div>
+      <div className="brand-filter"></div>
     </div>
   );
 }

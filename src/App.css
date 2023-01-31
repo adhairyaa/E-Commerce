@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+button {
+  cursor: pointer;
+}
+input {
+  cursor: pointer;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
