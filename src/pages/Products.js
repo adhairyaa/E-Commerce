@@ -1,8 +1,8 @@
 import { useCartContext } from "../context/CartProvider";
-
 import { WishlistButton } from "../components/WishlistButton";
 import products from "../products/products.json";
 import { useFilterProvider } from "../context/FilterProvider";
+import Filter from "../components/filter/Filter";
 export function Products() {
   const { cart, setCart } = useCartContext();
   const { state } = useFilterProvider();
@@ -37,56 +37,17 @@ export function Products() {
 
   return (
     <div>
-      <div className="FilterBar">
-        <div className="FilterBarTitle">
-          Filters
-          <button onClick={() => dispatch({ type: "clear" })}>Clear</button>
-        </div>
-        <div className="Sort-By">
-          Sort-By
-          <input
-            type="radio"
-            name="sort"
-            onClick={() => dispatch({ type: "Low to High" })}
-          ></input>
-          Low to High
-          <input
-            type="radio"
-            name="sort"
-            onClick={() => dispatch({ type: "High to Low" })}
-          ></input>
-          High to Low
-        </div>
-
-        <div className="CategoryFilter">
-          Category
-          <input
-            type="checkbox"
-            checked={category.men}
-            onClick={() => dispatch({ type: "Men" })}
-          ></input>
-          Men
-          <input
-            type="checkbox"
-            checked={category.women}
-            onClick={() => dispatch({ type: "Women" })}
-          ></input>
-          Women
-        </div>
-      </div>
+      <Filter />
       <div className="ProductListings">
         <p style={{ textAlign: "left", marginLeft: "2em" }}>
-          showing all products({filteredProducts.length})
+          showing all products({filteredData.length})
         </p>
         <div className="ListOfProducts">
-          {filteredProducts.map((item) => (
+          {filteredData.map((item) => (
             <div className="ProductItem">
-              <img
-                src={process.env.PUBLIC_URL + "/Section.jpg"}
-                alt="productImage"
-              ></img>
+              <img src={item.productImage} alt="productImage"></img>
               <div style={{ fontSize: "smaller" }}>{item.name}</div>
-              <div style={{ fontWeight: "bolder" }}>{item.Price}</div>
+              <div style={{ fontWeight: "bolder" }}>{item.price}</div>
               <div className="ProductWishlist">
                 <WishlistButton product={item} />
               </div>

@@ -1,7 +1,7 @@
-import { useStateProvider } from "../../context/StateProvider";
+import { useFilterProvider } from "../../context/FilterProvider";
 import "./Filter.css";
 function Filter() {
-  const { dispatch } = useStateProvider();
+  const { dispatch } = useFilterProvider();
 
   return (
     <div className="filterBar">
