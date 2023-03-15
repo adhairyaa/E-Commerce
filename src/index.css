@@ -255,7 +255,7 @@ a {
   width: 50vw;
   background-image: linear-gradient(to right, #ecc9c8, #ffffff);
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: flex-start;
   padding-left: 20px;
   padding-top: 20px;
