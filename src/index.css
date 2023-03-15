@@ -250,6 +250,37 @@ a {
 .CartPage {
   margin-top: 6em;
 }
+.cartBag {
+  height: 40px;
+  width: 50vw;
+  background-image: linear-gradient(to right, #ecc9c8, #ffffff);
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+@media (max-width: 700px) {
+  .CartPageItems {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .cartBag {
+    width: 70vw;
+  }
+  .OrderBill {
+    display: flex;
+    flex-flow: wrap column;
+    background-color: #d2b2b0;
+    min-width: 300px;
+    max-height: 40vh;
+    border: 5px solid #987170;
+    border-radius: 20px;
+    margin-left: auto;
+  }
+}
+
 .CartPageItems {
   display: flex;
   justify-content: space-evenly;
@@ -257,27 +288,30 @@ a {
 .InCartProducts {
   display: flex;
   flex-flow: wrap column;
-  gap: 0.1rem;
+  margin-top: 1px;
 }
 .CartItem {
   display: flex;
-  background-color: #d2b2b0;
+  border: 2px solid #ecc9c8;
   margin: 1em;
-  width: 310px;
-  height: 200px;
+  width: 400px;
+  height: 250px;
   position: relative;
 }
 .CartItem button {
   border: none;
-  margin-top: 6rem;
-  margin-left: 1px;
+  background-color: #d9534f;
+  border-bottom: 2px solid;
+  margin-top: 140px;
+  color: white;
 }
 .CartItem img {
   width: 160px;
-  height: 200px;
+  height: 250px;
   position: absolute;
 }
 .cart-product-details {
+  font-size: 1.2rem;
   position: absolute;
   right: 7px;
   top: 15px;
@@ -287,8 +321,16 @@ a {
   flex-flow: wrap column;
   background-color: #d2b2b0;
   width: 30%;
-  justify-content: flex-start;
-  align-items: flex-start;
   padding-left: 2em;
-  height: 100vh;
+  height: 70vh;
+  border: 5px solid #987170;
+  border-radius: 20px;
+  margin-top: 150px;
+}
+.orderDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  font-size: 1.5rem;
 }

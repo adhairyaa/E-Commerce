@@ -19,7 +19,7 @@ export function CartItem({ product }) {
                 dispatch({ type: "HANDLE_CART", payload: product.id })
               }
             >
-              Remove From cart
+              Remove Item
             </button>
           </div>
         </div>

@@ -22,25 +22,33 @@ export function Cart() {
 
   return (
     <div className="CartPage">
-      <h2>Your Cart</h2>
+      <h2>Your Cart 🛒 </h2>
       {state.productsInCart.length === 0 ? (
         <h3>Nothing to show here Start Shopping!</h3>
       ) : (
         state.productsInCart.length > 0 && (
           <div className="CartPageItems">
-            <div className="InCartProducts">
-              {cartProductsData.map((product) => (
-                <div>
-                  <CartItem product={product} />
-                </div>
-              ))}
+            <div className="cartPageLeftBar">
+              <p className="cartBag">Save upto 40%</p>
+              <div className="InCartProducts">
+                {cartProductsData.map((product) => (
+                  <div>
+                    <CartItem product={product} />
+                  </div>
+                ))}
+              </div>
             </div>
-
             <div className="OrderBill">
               <h3>Bill Details</h3>
-              <div>Items ({cartProductsData.length})</div>
-              <div>Delivery Charges $499</div>
-              <div>Total Amount {orderAmount}</div>
+              <div className="orderDetails">
+                Items <div>({cartProductsData.length})</div>
+              </div>
+              <div className="orderDetails">
+                Delivery Charges <div>$499</div>
+              </div>
+              <div className="orderDetails">
+                Total Amount <div>{orderAmount + 500}</div>
+              </div>
             </div>
           </div>
         )
