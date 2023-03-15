@@ -177,7 +177,7 @@ a {
 }
 .ProductListings {
   width: 75%;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-top: 80px;
 }
 .ListOfProducts {
@@ -245,6 +245,7 @@ a {
   align-items: center;
   margin-left: 8em;
 }
+
 /* CART PAGE________________________ */
 
 .CartPage {
