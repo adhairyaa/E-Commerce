@@ -173,7 +173,7 @@ a {
   align-items: flex-start;
 }
 .searchBar {
-  width: 35%;
+  width: 30%;
 }
 .ProductListings {
   width: 75%;
@@ -189,18 +189,25 @@ a {
   margin: 1em;
   background-color: white;
   position: relative;
-
-  box-shadow: 5px 3px 3px #e4c3c2;
+}
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 .ProductItem button {
-  width: 100%;
+  width: 70%;
   border: none;
   background-color: #d9534f;
   color: white;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .ProductItem img {
-  width: 150px;
-  height: 180px;
+  width: 180px;
+  height: 210px;
 }
 .ProductWishlist {
   position: absolute;

@@ -52,18 +52,20 @@ export function Products() {
           {filteredData.map((item) => (
             <div className="ProductItem">
               <img src={item.productImage} alt="productImage"></img>
-              <div style={{ fontSize: "smaller" }}>{item.name}</div>
-              <div style={{ fontWeight: "bolder" }}>{item.price}</div>
+              <div className="productDetail">
+                <div style={{ fontSize: "smaller" }}>{item.name}</div>
+                <div style={{ fontWeight: "bolder" }}>₹{item.price}</div>
+                <button
+                  onClick={() =>
+                    dispatch({ type: "HANDLE_CART", payload: item.id })
+                  }
+                >
+                  Add To Cart
+                </button>
+              </div>
               <div className="ProductWishlist">
                 <WishlistButton productId={item.id} />
               </div>
-              <button
-                onClick={() =>
-                  dispatch({ type: "HANDLE_CART", payload: item.id })
-                }
-              >
-                Add To Cart
-              </button>
             </div>
           ))}
         </div>
