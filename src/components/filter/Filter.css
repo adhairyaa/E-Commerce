@@ -1,23 +1,24 @@
 .filterBar {
   background-color: rgb(218, 147, 147);
-  width: 20%;
+  width: 300px;
   position: fixed;
   left: 0;
   height: 100%;
   margin-top: 60px;
   top: 25px;
+  transition: ease;
+  transform: translate(-40px);
+  z-index: 8;
 }
-@media (min-width: 300px) {
-  .filterBar {
-    background-color: rgb(218, 147, 147);
-    width: 25%;
-    position: fixed;
-    left: 0;
-    height: 100%;
-    margin-top: 60px;
-    top: 25px;
-  }
+.filterResponsive {
+  position: fixed;
+  left: -20px;
+  top: 20%;
+  background-color: rgb(218, 147, 147);
+  rotate: 90deg;
+  padding: 10px;
 }
+
 .filterBar-container {
   background-color: white;
   border-radius: 5px;
@@ -34,4 +35,17 @@
 .filterBar_title button {
   height: 20px;
   border: none;
+}
+
+.activeFilter {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #d9534f;
+}
+@media (min-width: 400px) {
+  .activeFilter {
+    display: none;
+  }
 }
