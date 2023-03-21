@@ -33,7 +33,7 @@ export function Home() {
         <Link to="/products">
           <div className="tileBar">
             <img
-              src={process.env.PUBLIC_URL + "/Section.jpg"}
+              src="https://images.pexels.com/photos/6310924/pexels-photo-6310924.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="{tileImg}"
             ></img>
             <div className="tileText">Men's</div>
@@ -42,7 +42,7 @@ export function Home() {
         <Link to="/products">
           <div className="tileBar">
             <img
-              src={process.env.PUBLIC_URL + "/Section.jpg"}
+              src="https://images.pexels.com/photos/6764015/pexels-photo-6764015.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="{tileImg}"
             ></img>
             <div className="tileText">Men's</div>
