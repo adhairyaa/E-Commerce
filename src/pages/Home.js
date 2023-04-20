@@ -63,10 +63,18 @@ export function Home() {
             <span style={{ fontSize: "larger", fontWeight: "bolder" }}>
               Information
             </span>
-            <p>Products</p>
-            <p>My Cart</p>
-            <p>Wishlist</p>
-            <p>My Account</p>
+            <Link to="/products">
+              <p>Products</p>
+            </Link>
+            <Link to="/products">
+              <p>My Cart</p>
+            </Link>
+            <Link to="/products">
+              <p>Wishlist</p>
+            </Link>
+            <Link to="/products">
+              <p>My Account</p>
+            </Link>
           </div>
         </div>
         <div className="footerLogo">Buye 2023</div>

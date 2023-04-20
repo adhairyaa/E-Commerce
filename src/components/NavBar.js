@@ -13,7 +13,7 @@ export function NavBar() {
           <span style={{ color: "#D9534F" }}>buye</span>
         </h2>
       </Link>
-      <input placeholder="search" className="searchBar"></input>
+      {/* <input placeholder="search" className="searchBar"></input> */}
       <div className="navBarItems">
         <button>Login</button>
         <Link to="/wishlist">

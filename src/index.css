@@ -36,6 +36,7 @@ a {
   z-index: 3;
   top: 0;
   padding-left: 10px;
+  border-bottom: 2px solid #d9534f;
 }
 
 .navBarItems {
